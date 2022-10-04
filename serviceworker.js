@@ -8,7 +8,7 @@ self.addEventListener('install', function(event) {
   );
 });
 
-/* Hvis ressourcen ikke er tilgengælig online, så søg i cahcehn efter et match  */
+/* Hvis ressourcen ikke er tilgængelig online, så søg i cahcehn efter et match  */
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     fetch(event.request).catch(() =>
