@@ -6,8 +6,8 @@ self.addEventListener("install", function (event) {
         caches.open(cacheName).then(function(cache) {
             return cache.addAll(["/example2/", "/example2/index.html", "/example2/butterflies.jpg", "/example2/butterfly.jpg", "/example2/dragonfly.jpg"]);
         })
-    )
-})
+    ); 
+}); 
 
 // Hvis ressource ikke er tilgængelig online, så søg i cachen
 // efter et match.
@@ -16,5 +16,5 @@ self.addEventListener("fetch", function(event) {
         fetch(event.request).catch(() =>
         caches.open(cacheName).then(cache=>cache.match(event.request))
         )
-    )
-})
+    ); 
+}); 
